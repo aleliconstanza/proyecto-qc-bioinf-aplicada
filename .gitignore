@@ -13,3 +13,4 @@ SRR*/
 
 # Zips de FastQC (el .html ya trae la información)
 results/fastqc_*/*.zip
+results/multiqc/*_data/
