@@ -1,0 +1,5 @@
+archivo	lecturas	%_retenido	largo_promedio	%_Q30
+data/raw/SRR11441020_sub_1.fastq.gz	300000	100.00	128.4	91
+data/raw/SRR11441020_sub_2.fastq.gz	300000	100.00	128.5	89
+data/trimmed/SRR11441020_trim_1.fastq.gz	298800	99.60	127.3	92
+data/trimmed/SRR11441020_trim_2.fastq.gz	298800	99.60	126.8	90

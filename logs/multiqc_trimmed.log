@@ -1,0 +1,10 @@
+
+/// MultiQC 🎃 v1.35
+
+       file_search | Search path: /home/aleligalaz/proyecto-qc-bioinf-aplicada/results/fastqc_trimmed
+       file_search | Search path: /home/aleligalaz/proyecto-qc-bioinf-aplicada/results/fastp.json
+             fastp | Found 1 reports
+            fastqc | Found 2 reports
+     write_results | Data        : results/multiqc/trimmed_data
+     write_results | Report      : results/multiqc/trimmed.html
+           multiqc | MultiQC complete

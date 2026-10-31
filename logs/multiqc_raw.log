@@ -3,6 +3,6 @@
 
        file_search | Search path: /home/aleligalaz/proyecto-qc-bioinf-aplicada/results/fastqc_raw
             fastqc | Found 2 reports
-     write_results | Data        : results/multiqc/raw_data
-     write_results | Report      : results/multiqc/raw.html
+     write_results | Data        : results/multiqc/raw_data   (overwritten)
+     write_results | Report      : results/multiqc/raw.html   (overwritten)
            multiqc | MultiQC complete
