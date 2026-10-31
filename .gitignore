@@ -1,0 +1,15 @@
+# Lecturas: pesan cientos de MB, no van en Git
+data/raw/*
+!data/raw/.gitkeep
+data/trimmed/*
+!data/trimmed/.gitkeep
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.sra
+
+# Carpeta que crea prefetch
+SRR*/
+
+# Zips de FastQC (el .html ya trae la información)
+results/fastqc_*/*.zip
