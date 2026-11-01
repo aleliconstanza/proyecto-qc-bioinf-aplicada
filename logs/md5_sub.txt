@@ -1,0 +1,2 @@
+a07984e10e2bc3f1c55a477bfb7522da  data/raw/SRR11441020_sub_1.fastq.gz
+152b86ef2ab9d41c9feecc54f6491f14  data/raw/SRR11441020_sub_2.fastq.gz
