@@ -18,15 +18,12 @@ Descargar los dos archivos de https://drive.google.com/drive/folders/1K9x9yVIT7N
 y copiarlos a data/raw/. Verificar con: md5sum data/raw/SRR11441020_sub_*.fastq.gz
 (comparar con logs/md5_sub.txt). Alternativa: bash download.sh (desde SRA, 10-30 min).
 
-## 3. Ejecutar (desde la raíz del repositorio)
+## 3. Ejecutar desde la raíz del repositorio (tarda unos 5 minutos)
 
     bash run_qc.sh
 
-Tarda unos 5 minutos.
-
 ## 4. Resultados
 
-- results/multiqc/raw.html y trimmed.html: QC antes y después del recorte
-- results/fastp.html: reporte de fastp
+- results/multiqc/raw.html y trimmed.html: QC antes y después del recorte; results/fastp.html: fastp
 - logs/tabla_antes_despues.tsv: lecturas, % retenido, largo promedio y % Q30
 - Resultado esperado: 298.800 pares retenidos (99,60 %)
