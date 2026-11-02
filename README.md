@@ -1,29 +1,41 @@
 # QC y preprocesamiento de lecturas Illumina: SRR11441020
 
-Reproduce el preprocesamiento de Belmonte et al. (2020), E. coli UMB9246
-(MRA 9:e00437-20): QC con FastQC/MultiQC, recorte con fastp (traducción de
-Sickle v1.33) y QC posterior al recorte. Análisis sobre 300.000 pares
-submuestreados (seqkit sample -s 11).
+Este proyecto reproduce el control de calidad y preprocesamiento de las lecturas de *E. coli* UMB9246 (Belmonte et al., 2020), mediante FastQC, MultiQC y fastp. Se analizan 300.000 pares de lecturas Illumina paired-end (R1/R2), seleccionados con semilla 11.
 
-## 1. Clonar y crear el entorno
+## 1. Preparar el entorno
 
-    git clone https://github.com/aleliconstanza/proyecto-qc-bioinf-aplicada.git
-    cd proyecto-qc-bioinf-aplicada
-    mamba env create -f environment.yml
-    conda activate qc-pareja1
+Clonar el repositorio:
+```bash
+git clone https://github.com/aleliconstanza/proyecto-qc-bioinf-aplicada.git
+cd proyecto-qc-bioinf-aplicada
+```
 
-## 2. Obtener los datos (no están en el repositorio)
+Crear y activar el entorno:
+```bash
+conda env create -f environment.yml
+conda activate qc-pareja1
+```
 
-Descargar los dos archivos de https://drive.google.com/drive/folders/1K9x9yVIT7NqfTcqn6dgbKpv5JTbv26AG
-y copiarlos a data/raw/. Verificar con: md5sum data/raw/SRR11441020_sub_*.fastq.gz
-(comparar con logs/md5_sub.txt). Alternativa: bash download.sh (desde SRA, 10-30 min).
+## 2. Obtener los datos
 
-## 3. Ejecutar desde la raíz del repositorio (tarda unos 5 minutos)
+Los FASTQ no están incluidos en el repositorio. Descargarlos desde [Google Drive](https://drive.google.com/drive/folders/1K9x9yVIT7NqfTcqn6dgbKpv5JTbv26AG) y copiarlos a `data/raw/`:
+- `SRR11441020_sub_1.fastq.gz` (R1).
+- `SRR11441020_sub_2.fastq.gz` (R2).
 
-    bash run_qc.sh
+Alternativamente, ejecutar `bash download.sh` para descargarlos desde NCBI SRA y generar el submuestreo (10–30 min).
+
+## 3. Ejecutar el análisis
+
+Desde la raíz del repositorio, con el entorno activado:
+```bash
+bash run_qc.sh
+```
+El procesamiento tarda aproximadamente 5 minutos, según el equipo.
 
 ## 4. Resultados
 
-- results/multiqc/raw.html y trimmed.html: QC antes y después del recorte; results/fastp.html: fastp
-- logs/tabla_antes_despues.tsv: lecturas, % retenido, largo promedio y % Q30
-- Resultado esperado: 298.800 pares retenidos (99,60 %)
+Se generan:
+- `results/multiqc/raw.html` y `trimmed.html`: informes de calidad antes y después del recorte.
+- `results/fastp.html`: informe del recorte.
+- `logs/tabla_antes_despues.tsv`: comparación de lecturas, retención, longitud promedio y porcentaje Q30.
+Los FASTQ procesados se guardan en `data/trimmed/`. Resultado esperado: 298.800 pares retenidos (99,60 %).
